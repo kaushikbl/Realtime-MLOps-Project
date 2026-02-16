@@ -1,6 +1,12 @@
-data/
+/data/*
+!/data/*.dvc
 models/*.pkl
 *.pyc
 __pycache__/
 .dvc/cache
 .dvc/tmp
+.dvc
+.venv/
+node_modules/
+*.pyc
+__pycache__/
