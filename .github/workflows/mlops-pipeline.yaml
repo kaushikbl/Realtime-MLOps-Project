@@ -45,7 +45,7 @@ jobs:
      - name: push model to s3
        run: |
          aws s3 cp models/churn_model.pkl s3://churn-model-mlops/model/churn_model.pkl
-         echo "model pushed to s3 success"
+         echo "model pushed to s3 successss"
 
      - name: Inject Secrets into YAML    
        run: |
