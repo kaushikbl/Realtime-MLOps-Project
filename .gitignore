@@ -1,7 +1,7 @@
 /data/*
 !/data/*.dvc
 !models/.gitkeep
-models/*.pkl
+#models/*.pkl
 *.pyc
 __pycache__/
 .dvc/cache
