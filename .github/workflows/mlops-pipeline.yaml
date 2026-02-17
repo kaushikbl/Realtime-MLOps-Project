@@ -1,8 +1,7 @@
 name: mlops-pipeline
-
 on:
   push:
-    branches: [cicd]
+    branches: [main]
 
 
 env:
