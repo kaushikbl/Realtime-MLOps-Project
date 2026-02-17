@@ -1,5 +1,6 @@
 /data/*
 !/data/*.dvc
+!models/.gitkeep
 models/*.pkl
 *.pyc
 __pycache__/
