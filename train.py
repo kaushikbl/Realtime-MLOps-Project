@@ -1,6 +1,7 @@
 """Train churn prediction model"""
 import pandas as pd
 import pickle
+import os  # Added to handle directory creation
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score
@@ -24,11 +25,13 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 y_proba = model.predict_proba(X_test)[:, 1]
 
-accuracy = accuracy_score(y_test, y_pred)
-auc = roc_auc_score(y_test, y_proba)
+print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+print(f"AUC-ROC: {roc_auc_score(y_test, y_proba):.4f}")
 
-print(f"Accuracy: {accuracy:.4f}")
-print(f"AUC-ROC: {auc:.4f}")
+# --- FIX START ---
+# Ensure the 'models' directory exists before saving
+os.makedirs('models', exist_ok=True)
+# --- FIX END ---
 
 # Save model
 with open('models/churn_model.pkl', 'wb') as f:
