@@ -62,5 +62,6 @@ jobs:
          git config --local user.email "action@github.com"
          git config --local user.name "github actions"
          git add k8s/inference.yaml
+         git diff --cached --quiet || (git commit -m "updated model with s3 path" && git push)
          git commit -m "updated model with s3 path"
          git push || echo "no changes to push"
