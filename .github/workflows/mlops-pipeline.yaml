@@ -47,10 +47,7 @@ jobs:
          aws s3 cp models/churn_model.pkl s3://churn-model-mlops/model/churn_model.pkl
          echo "model pushed to s3 successss"
 
-     - name: Inject Secrets into YAML    
-       run: |
-        sed -i "s/YOUR_ACCESS_KEY/${{ secrets.AWS_ACCESS_KEY_ID }}/g" k8s/serviceaccount.yaml
-        sed -i "s|YOUR_SECRET_KEY|${{ secrets.AWS_SECRET_ACCESS_KEY }}|g" k8s/serviceaccount.yaml
+     
         
      - name: update inference.yaml with s3 model path
        run: |
